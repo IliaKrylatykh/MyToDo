@@ -6,11 +6,11 @@ let todoDone = ['todo999', 'todo888'];
 const addTodoInput = document.querySelector('.addTodo__input'),
       addTodoForm = document.querySelector('.addTodo__form'),
       todosListElement = document.querySelector('.todos__list'),
-      todosDoneElement = document.querySelector('.todos__done');
+      todosDoneElement = document.querySelector('.todos__done'),
+      filter = document.querySelector('.filter__form');
 
 createTodosList(todoDB, todosListElement);
 createTodosDone(todoDone, todosDoneElement);
-
 
 addTodoForm.addEventListener('submit', event => {
   event.preventDefault();
@@ -18,6 +18,12 @@ addTodoForm.addEventListener('submit', event => {
   todoDB.push(addNewTodo);
   addTodoInput.value = '';
   createTodosList(todoDB, todosListElement);
+});
+
+filter.addEventListener('submit', event => {
+  event.preventDefault();
+  let filterValue = filter;
+  
 });
 
 function createTodosList(todos, element) {
@@ -41,7 +47,7 @@ function createTodosDone(todos, element) {
   todos.forEach((todo, i) => {
     element.innerHTML += `
     <li class='todo__element_done'>
-    <div onclick="changeTodo(${i})" class="todo__text_done">${i+1}) ${todo}
+    <div class="todo__text_done">${i+1}) ${todo}
     </div>
     </li>
     `;
@@ -63,7 +69,6 @@ function moveUp(key) {
 }
 
 function moveDown(key) {
-  console.log(key, todoDB.length);
   if (key < todoDB.length - 1) {
     let buffer = todoDB[key + 1];
     todoDB[key + 1] = todoDB[key];
@@ -86,3 +91,4 @@ function doneTodo(key) {
   createTodosList(todoDB, todosListElement);
   createTodosDone(todoDone, todosDoneElement);
 }
+

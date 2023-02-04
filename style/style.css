@@ -17,5 +17,6 @@
 }
 
 .todo__text_done {
-  min-width: 200px;
+  width: 200px;
+  background-color: rgb(255, 180, 180);
 }
