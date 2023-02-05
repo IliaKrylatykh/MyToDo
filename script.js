@@ -30,11 +30,12 @@ function renderListActive(array, list) {
 
         <input onblur="changeText(${i}, this)" class="change__input" value="${todo}">
         
-        <input onclick="doneTodo(${i})" type='checkbox'>
+        <button onclick="doneTodo(${i})" class="done__btn">done</button>
         <button onclick="deleteTodo(${i})" class="todo__element_delete">delete</button>
+        <div class="upDown__btns">
         <button onclick="moveUp(${i})" class="todo__element_up">up</button>
         <button onclick="moveDown(${i})" class="todo__element_down">down</button>
-      
+        </div>
     </li>
     `;
   });
@@ -47,9 +48,9 @@ function renderListDone(array, list) {
   array.forEach((todo, i) => {
     list.innerHTML += `
     <li class='todo__element_done'>
-    <div class="todo__text">${todo}
+    <div class="todo__text_done">${todo}
     </div>
-    <input type='checkbox' checked>
+    <div class="yep">&#10004;</div>
     </li>
     `;
   });
