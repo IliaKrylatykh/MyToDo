@@ -52,8 +52,11 @@ body {
 .new__todo_btn {
   display: inline-block;
   color: white;
-  padding: 8px 31px 9px 4px;
-  font-size: 2rem;
+  padding: 0;
+  padding-left: 10px;
+  height: 50px;
+  width: 80px;
+  font-size: 30px;
   border: none;
   background-color: #6028d1;
   /* background-image: linear-gradient(120deg, #4d49d0, #543ed1); */
