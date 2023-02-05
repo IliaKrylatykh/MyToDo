@@ -1,7 +1,7 @@
 'use strict';
 
-const activeDB = ['todo1', 'todo2', 'todo3', 'todo4'],
-      doneDB = ['done1', 'done2'];
+const activeDB = [],
+      doneDB = [];
 
 const addTodoForm = document.querySelector('.form__todo'),
       addTodoInput = document.querySelector('.new__todo_input'),
